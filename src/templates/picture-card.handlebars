@@ -1,0 +1,15 @@
+{{#each this.hits }}
+<li class="photo-card">
+    <picture class="photo-card__picture">
+        <img class="photo-card__image hidden" src=" {{webformatURL}}" alt="{{tags}}" data-id="{{id}}" />
+    </picture>
+    <div class="photo-card__stats-container">
+        <div class="photo-card__stats">
+            <p class="photo-card__item"><i class="material-icons">thumb_up</i>{{likes}}</p>
+            <p class="photo-card__item"><i class="material-icons">visibility</i>{{views}}</p>
+            <p class="photo-card__item"><i class="material-icons">comment</i>{{comments}}</p>
+            <p class="photo-card__item"><i class="material-icons">cloud_download</i>{{downloads}}</p>
+        </div>
+    </div>
+</li>
+{{/each}}
