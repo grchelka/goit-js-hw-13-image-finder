@@ -4,6 +4,7 @@ import API from "./js/apiService.js";
 const debounce = require("lodash.debounce");
 
 const refs = {
+  container: document.querySelector(".container"),
   searchInput: document.querySelector(".js-search-input"),
   btnRequest: document.querySelector(".js-btn"),
   cardContainer: document.querySelector(".js-gallery"),
@@ -22,6 +23,14 @@ function onSearch(event) {
       .catch(onFetchError);
   } else {
     refs.cardContainer.innerHTML = "";
+    refs.btnRequest.classList.add("hidden");
+  }
+}
+
+function renderResponse(response) {
+  if (response.hits.length) {
+    refs.cardContainer.innerHTML = pictureCardTpl(response);
+    refs.btnRequest.classList.remove("hidden");
   }
 }
 
@@ -37,12 +46,15 @@ function onLoadMore() {
   }
 }
 
-function renderResponse(response) {
-  refs.cardContainer.innerHTML = pictureCardTpl(response);
-}
-
 function renderAdditionalResponse(response) {
-  refs.cardContainer.insertAdjacentHTML("beforeend", pictureCardTpl(response));
+  if (response.hits.length) {
+    refs.cardContainer.insertAdjacentHTML(
+      "beforeend",
+      pictureCardTpl(response)
+    );
+  } else {
+    refs.btnRequest.classList.add("hidden");
+  }
 }
 
 function onFetchError(error) {

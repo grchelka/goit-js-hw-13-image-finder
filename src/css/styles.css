@@ -66,6 +66,10 @@ img {
   font-size: 15px;
 }
 
+.js-btn.hidden {
+  display: none;
+}
+
 .js-btn {
   text-decoration: none;
   border: 1px solid grey;

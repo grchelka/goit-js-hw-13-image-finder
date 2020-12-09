@@ -11,22 +11,23 @@
     <title>Homework 13</title>
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        class="js-search-input"
-        type="text"
-        name="query"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-    </form>
-
-    <ul class="js-gallery">
-      <!-- Список <li> с карточками изображений -->
-    </ul>
-    <button class="js-btn">
-      Load more
-    </button>
+    <div class="container">
+      <form class="search-form" id="search-form">
+        <input
+          class="js-search-input"
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+      </form>
+      <ul class="js-gallery">
+        <!-- Список <li> с карточками изображений -->
+      </ul>
+      <button class="js-btn hidden">
+        Load more
+      </button>
+    </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
 </html>
